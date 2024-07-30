@@ -9,4 +9,4 @@ const bool mqtt_use_auth   = false;
 const char *mqtt_username  = "username";
 const char *mqtt_password  = "password";
 
-const char *publish_topic = "/sdc41/co2";
+const char *publish_topic = "/scd41/0001";

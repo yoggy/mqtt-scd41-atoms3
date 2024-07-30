@@ -18,8 +18,8 @@ void setup() {
   M5.begin(cfg);
 
   M5.Display.setTextSize(3);
-  M5.Display.setBrightness(32);
-
+  M5.Display.setBrightness(64);
+  M5.Display.setRotation(2);
 
   // Wifi
   WiFi.mode(WIFI_MODE_STA);
@@ -138,7 +138,10 @@ void loop() {
 
     snprintf(buf, 255, "H:%d%%  ", hum);
     M5.Display.drawString(buf, 0, 95);
+
+    snprintf(buf, 255, "{\"co2\":%d,\"temperature\":%d,\"humidity\":%d}", co2, tmp, hum);
+    mqtt_client.publish(publish_topic, buf);
   }
 
-  delay(1000);
+  delay(3000);
 }
