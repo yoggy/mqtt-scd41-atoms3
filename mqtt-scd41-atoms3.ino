@@ -19,7 +19,7 @@ void setup() {
 
   M5.Display.setTextSize(3);
   M5.Display.setBrightness(64);
-  M5.Display.setRotation(2);
+  M5.Display.setRotation(0);
 
   // Wifi
   WiFi.mode(WIFI_MODE_STA);
